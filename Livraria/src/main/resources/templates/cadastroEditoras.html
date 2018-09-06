@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+
+<head>
+<meta charset="UTF-8" />
+
+<link
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/lux/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-ML9h/UCooefre72ZPxxOHyjbrLT1xKV0AHON1J+OlOV2iwcYemqmWyMfTcfyzLJ1"
+	crossorigin="anonymous">
+
+</head>
+
+<body>
+	<h1>Cadastro Editoras</h1>
+	<div class="container">
+		<form class="form-horizontal" method="POST" action="/editoras">
+
+
+			<div class="alert alert-success"
+				th:if="${!#strings.isEmpty(mensagem)}">
+				<span class="alert-heading" th:text="${mensagem}">Warning!</span>
+			</div>
+
+			<div class="form-group">
+				<label for="nomeed" class="col-lg-8-col-form-label"> <font
+					style="vertical-align: herdar;"> <font
+						style="vertical-align: inherit;"> Nome Editora </font>
+				</font>
+				</label>
+				<div class="col-lg-10">
+					<input type="text" class="forma-controle-texto sem formatação"
+						id="nomeEd" name="nomeEd">
+				</div>
+			</div>
+
+			<button type="submit" class="btn btn-primário">
+				<font style="vertical-align: herdar;"> <font
+					style="vertical-align: herdar;"> Enviar </font>
+				</font>
+			</button>
+
+
+		</form>
+
+	</div>
+</body>
+
+</html>

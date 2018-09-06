@@ -6,27 +6,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.livraria.modelo.Autor;
-import br.com.livraria.repository.AutorRepository;
+import br.com.livraria.modelo.Categoria;
+import br.com.livraria.repository.CategoriaRepository;
 
 @Controller
-@RequestMapping("/autores")
-public class AutorController {
+@RequestMapping("/categorias")
+public class CategoriaController {
 	
 	@Autowired
-	private AutorRepository autores;
+	private CategoriaRepository categorias;
 	
 	@RequestMapping("/novo")
 	public ModelAndView novo() {
-		ModelAndView mv = new ModelAndView("cadastroAutores");
+		ModelAndView mv = new ModelAndView("cadastroCategorias");
 		return mv;
 	}
 	
 	@RequestMapping ( method  =  RequestMethod . POST )
-	public  ModelAndView  salvar ( Autor  autor ) {
-		autores.save (autor);
-		ModelAndView mv =  new  ModelAndView ( " cadastroAutores " );
-		mv . addObject ( " mensagem " , " Livro cadastrado com sucesso " );
+	public  ModelAndView  salvar ( Categoria  categoria ) {
+		categorias.save (categoria);
+		ModelAndView mv =  new  ModelAndView ( " cadastroCategoria " );
+		mv . addObject ( " mensagem " , " Categoria cadastrada com sucesso! " );
 		return mv;
 
 	}
